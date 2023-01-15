@@ -32,10 +32,17 @@
         <div class="inner-section">
           <h2>Consumables</h2>
           <ol>
-            <li v-for="(stat, i) in cheatsheet.StatPrio" :key="i">
-              {{ stat }}
+            <li v-for="(consumable, i) in cheatsheet.Consumables" :key="i">
+              {{ consumable }}
             </li>
           </ol>
+        </div>
+        <div class="inner-section">
+          <h2>Enchants</h2>
+          <div class="enchants" v-for="(enchant, i) in cheatsheet.Enchants" :key="i">
+              <strong>{{i}}</strong>
+              {{enchant}}
+          </div>
         </div>
       </div>
     </div>
@@ -141,5 +148,17 @@ export default {
 }
 .section:nth-child(2) {
   grid-column-start: 4;
+}
+
+.enchants {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #fff;
+}
+
+.enchant-icon {
+  width: 60px;
 }
 </style>
